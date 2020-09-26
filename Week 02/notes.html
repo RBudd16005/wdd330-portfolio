@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Notes</title>
+    </head>
+    <body>
+        <h1>Notes</h1>
+        <p>
+            <h3>Chapter 2</h3>
+Comments are odd because they seem like more work that does not do anything by the code.<br>
+They are important for helping others understand your code faster.<br>
+Comments do not have to be long.<br>
+<br>
+// Single line comment<br>
+/* Multi line<br>
+   comment */<br>
+   <br>
+C-style syntax used by JavaScript<br>
+<br>
+Example of Javascript:<br>
+const message = 'Hello World!'<br>
+alert(message)<br>
+<br>
+also: const message = 'Hello World!';alert(message);<br>
+<br>
+Block code is used with '{}' and does not need an ending semi-colon.<br>
+<br>
+There are reserved words for functions in Javascript that cannot be used as variable names:<br>
+abstract, await, boolean, break, byte, case, catch, char, class, const, continue, debugger, default, delete, do, double, else, enum, export, extends, false, final, finally, float, for, function, goto, if, implements, import, in instanceof, int, interface<br>
+let, long, native, new, null, package, private, protected, public, return, short, static, super, switch, synchronized, this, throw, throws, transient, true, try, typeof, var, volatile, void, while, with, yield<br>
+<br>
+also do not use: undefined, NaN, Infinity<br>
+<br>
+Seven datatypes: String, Symbol, Number, Boolean, Undefined, Null<br>
+<br>
+Typeof will show what the varialbe is:<br>
+typeof 'hello'<br>
+<< 'string'<br>
+<br>
+const and let are block scope varialbes that only work in the block they are declared in.<br>
+<br>
+Try to avoid Global Scope variables.<br>
+<br>
+Do not start variables with numbers and avoid starting with underscores unless the variable is private, also try to avoid starting with $.<br>
+<br>
+Variable names are case sensitive.<br>
+<br>
+Be consistant with your naming rules.<br>
+<br>
+Variables started with '{}' mean it is a referance and not the value itself:<br>
+const c = { value: 1 };<br>
+let d = c; // c.value = 1, d.value = 1<br>
+d.value = 2; // c.value = 2, d.value = 2<br>
+<br>
+use ' and " as needed if you want a ' or a " in the string:<br>
+'it's me' = error<br>
+"it's me' = good!<br>
+This also works: 'it\'s me'<br>
+<br>
+string.toUpperCase() = change all characters to upper case<br>
+string.toLowerCase() = change all characters to lower case<br>
+find characters by index: name.charAt(0)<br>
+                         << 'w'<br>
+find index by character: string.indexOf('w')<br>
+                         << 0<br>
+        </p>
+    </body>
+</html>
