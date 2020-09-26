@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Week 02: Team Activity</title>
+
+        <script>
+            function displayText(){
+                let textHTML = document.getElementById("text_input").value;
+                document.getElementById("text_box").innerHTML = textHTML;
+            }
+
+            function sumUp(number){
+                if(!isNaN(number))
+                {
+                    let sum = 0;
+                    for (let i = 0; i <= number; i++){
+                        sum += i;
+                    }
+                    document.getElementById("text_box").innerHTML = sum;
+                }
+                else
+                {
+                    document.getElementById("text_box").innerHTML = "Error: Please Enter Numbers Only";
+                }
+            }
+
+            function sum(a, b){
+                if (!isNaN(a) && !isNaN(b)){
+                    let sum = parseInt(a) + parseInt(b);
+                    document.getElementById("text_box").innerHTML = sum;
+                }
+                else {
+                    document.getElementById("text_box").innerHTML = "Error: Please Enter Numbers Only";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" id="text_input">
+        <input type="text" id="text_input2">
+        <button onclick="displayText()">Display Text</button>
+        <button onclick="sumUp(text_input.value)">Sum Up</button>
+        <button onclick="sum(text_input.value, text_input2.value)">Add Together</button>
+        <div id="text_box"></div>
+    </body>
+</html>
