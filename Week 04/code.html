@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+    <title>Week 04: Code
+    </title>
+    <script>
+    </script>
+
+    <style>
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Chapter 08: Code</h1>
+        <h5>Basic Style of Search Form</h5>
+        <form name='search' action='/search'>
+            <input name='searchInput'>
+            <button type='submit'>Search</button>
+        </form>
+        <h3>Form Properties and Methods</h3>
+        <h5>Manual Form Submission</h5>
+        <button type='submit'>Submit</button>
+        <input type='submit' value='Submit'>
+        <input type='image' src='button.png'> <br>
+        <h5>Reset Button</h5>
+        <button type='reset'>Reset</button> <br>
+        <h5>Form Action</h5>
+        form.action = '/an/other.url'<br>
+        <h3>Form Events</h3>
+        <h5>Focus Event</h5>
+        const input = form.elements.searchInput; <br>
+        input.addEventListener('focus', () => alert('focused'), false); <br>
+        <h5>Blur Event</h5>
+        input.addEventListener('blur', () => alert('blurred'), false); <br>
+        <h5>Change Event</h5>
+        input.addEventListener('change', () => alert('changed'), false); <br>
+    </div>
+</body>
+</html>

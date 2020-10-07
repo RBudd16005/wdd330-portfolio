@@ -1,0 +1,183 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Week 04: Team Activity</title>
+        <style>
+          td {
+            border: 1px solid black;
+            height: 50px;
+            width: 50px;
+          }
+        </style>
+
+    </head>
+    <body>
+      <h1>Tic Tac Toe</h1>
+      <form id="form">
+        <table>
+          <tr>
+              <td id="A1" onmouseover="addSymbolA1()"></td>
+              <td id="A2" onmouseover="addSymbolA2()"></td>
+              <td id="A3" onmouseover="addSymbolA3()"></td>
+          </tr>
+          <tr>
+              <td id="B1" onmouseover="addSymbolB1()"></td>
+              <td id="B2" onmouseover="addSymbolB2()"></td>
+              <td id="B3" onmouseover="addSymbolB3()"></td>
+          </tr>
+          <tr>
+              <td id="C1" onmouseover="addSymbolC1()"></td>
+              <td id="C2" onmouseover="addSymbolC2()"></td>
+              <td id="C3" onmouseover="addSymbolC3()"></td>
+          </tr>
+        </table>
+        <button type='reset'>Reset</button>
+    </form>
+    
+    <script>
+      let player = 1;
+
+      function addSymbolA1() {
+        let data = document.getElementById("A1").textContent;
+        if (data == "") {
+          if (player == 1) {
+            document.getElementById("A1").textContent = "  X  ";
+            player = 2;
+          }
+          else {
+            document.getElementById("A1").textContent = "  O  ";
+            player = 1;
+          }
+        }
+      }
+
+      function addSymbolA2() {
+        let data = document.getElementById("A2").textContent;
+        if (data == "") {
+          if (player == 1) {
+            document.getElementById("A2").textContent = "  X  ";
+            player = 2;
+          }
+          else {
+            document.getElementById("A2").textContent = "  O  ";
+            player = 1;
+          }
+        }
+      }
+
+      function addSymbolA3() {
+        let data = document.getElementById("A3").textContent;
+        if (data == "") {
+          if (player == 1) {
+            document.getElementById("A3").textContent = "  X  ";
+            player = 2;
+          }
+          else {
+            document.getElementById("A3").textContent = "  O  ";
+            player = 1;
+          }
+        }
+      }
+
+      function addSymbolB1() {
+        let data = document.getElementById("B1").textContent;
+        if (data == "") {
+          if (player == 1) {
+            document.getElementById("B1").textContent = "  X  ";
+            player = 2;
+          }
+          else {
+            document.getElementById("B1").textContent = "  O  ";
+            player = 1;
+          }
+        }
+      }
+
+      function addSymbolB2() {
+        let data = document.getElementById("B2").textContent;
+        if (data == "") {
+          if (player == 1) {
+            document.getElementById("B2").textContent = "  X  ";
+            player = 2;
+          }
+          else {
+            document.getElementById("B2").textContent = "  O  ";
+            player = 1;
+          }
+        }
+      }
+
+      function addSymbolB3() {
+        let data = document.getElementById("B3").textContent;
+        if (data == "") {
+          if (player == 1) {
+            document.getElementById("B3").textContent = "  X  ";
+            player = 2;
+          }
+          else {
+            document.getElementById("B3").textContent = "  O  ";
+            player = 1;
+          }
+        }
+      }
+
+      function addSymbolC1() {
+        let data = document.getElementById("C1").textContent;
+        if (data == "") {
+          if (player == 1) {
+            document.getElementById("C1").textContent = "  X  ";
+            player = 2;
+          }
+          else {
+            document.getElementById("C1").textContent = "  O  ";
+            player = 1;
+          }
+        }
+      }
+
+      function addSymbolC2() {
+        let data = document.getElementById("C2").textContent;
+        if (data == "") {
+          if (player == 1) {
+            document.getElementById("C2").textContent = "  X  ";
+            player = 2;
+          }
+          else {
+            document.getElementById("C2").textContent = "  O  ";
+            player = 1;
+          }
+        }
+      }
+
+      function addSymbolC3() {
+        let data = document.getElementById("C3").textContent;
+        if (data == "") {
+          if (player == 1) {
+            document.getElementById("C3").textContent = "  X  ";
+            player = 2;
+          }
+          else {
+            document.getElementById("C3").textContent = "  O  ";
+            player = 1;
+          }
+        }
+      }
+      function boardReset() {
+        document.getElementById("A1").textContent = "";
+        document.getElementById("A2").textContent = "";
+        document.getElementById("A3").textContent = "";
+        document.getElementById("B1").textContent = "";
+        document.getElementById("B2").textContent = "";
+        document.getElementById("B3").textContent = "";
+        document.getElementById("C1").textContent = "";
+        document.getElementById("C2").textContent = "";
+        document.getElementById("C3").textContent = "";
+        player = 1;
+      }
+
+      const form = document.getElementById('form');
+      form.addEventListener('reset', boardReset);
+    </script>
+
+    </body>
+</html>
