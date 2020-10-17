@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+    <title>Week 05: Code Exercises
+    </title>
+    <script>
+    </script>
+
+    <style>
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Chapter 08: Code Exercises</h1>
+        <h4>Bugs and Errors</h4>
+        <h5>Problem 8.1: Retry</h5>
+        <div>
+            class MultiplicatorUnitFailure extends Error {} <br>
+            <br>
+            function primitiveMultiply(a, b) {<br>
+                if (Math.random() < 0.2) {<br>
+                    return a * b;<br>
+                } else {<br>
+                    throw new MultiplicatorUnitFailure("Klunk");<br>
+                }<br>
+            }<br>
+            <br>
+            function reliableMultiply(a, b) {<br>
+                for (;;) {<br>
+                    try {<br>
+                      return primitiveMultiply(a, b);<br>
+                    } catch (e) {<br>
+                      if (!(e instanceof MultiplicatorUnitFailure))<br>
+                        throw e;<br>
+                    }<br>
+                }<br>
+            }<br>
+            <br>
+            console.log(reliableMultiply(8, 8));<br>
+                // → 64<br>
+            <h5>Output with help:</h5>
+            <div>
+                64 <br>
+            </div>
+                
+            <h5>Problem 8.2: The Locked Box</h5>
+                const box = {<br>
+                locked: true,<br>
+                unlock() { this.locked = false; },<br>
+                lock() { this.locked = true;  },<br>
+                _content: [],<br>
+                get content() {<br>
+                  if (this.locked) throw new Error("Locked!");<br>
+                  return this._content;<br>
+                }<br>
+              };<br>
+              <br>
+              function withBoxUnlocked(body) {<br>
+                if(!box.locked){<br>
+                    return body()<br>
+                }<br>
+                <br>
+                box.unlock();<br>
+                try{<br>
+                    return body()<br>
+                } finally {<br>
+                    box.lock();<br>
+                }<br>
+              }<br>
+              <br>
+              withBoxUnlocked(function() {<br>
+                box.content.push("gold piece");<br>
+              });<br>
+              <br>
+              try {<br>
+                withBoxUnlocked(function() {<br>
+                  throw new Error("Pirates on the horizon! Abort!");<br>
+                });<br>
+              } catch (e) {<br>
+                console.log("Error raised: " + e);<br>
+              }<br>
+              console.log(box.locked);<br>
+              // → true<br>
+              <h5>Output with help:</h5>
+              Error raised: Error: Pirates on the horizon! Abort!<br>
+            true<br>
+        </div>
+    </div>
+</body>
+</html>
