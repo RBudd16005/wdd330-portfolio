@@ -21,7 +21,7 @@ function newTodo() {
 
 function createTodo() {
     const input = document.querySelector('#todoInput');
-    const newTodo = { id: Date.now(), content: input.nodeValue, completed: false}
+    const newTodo = { id: Date.now(), content: input.value, completed: false}
     input.value = '';
     return newTodo;
 }
