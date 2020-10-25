@@ -30,7 +30,7 @@ function getTodoList(){
     const todoListString = localStorage.getItem('toDoList');
     let todoList = [];
 
-    if (todoListString != 'undefined') {
+    if (todoListString) {
         todoList = JSON.parse(todoListString);
     }
 
