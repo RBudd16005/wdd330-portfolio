@@ -12,7 +12,10 @@ document.querySelector('#completedFilter').onclick = applyFilter;
 
 // Step 0
 function loadTodos() {
-    const todoList = ls.getTodoList();
+    let todoList = ls.getTodoList();
+    if (!todoList) {
+        todoList = [];
+    }
     
     todoList.forEach( todo => {
         const el = createTodoElement(todo)
