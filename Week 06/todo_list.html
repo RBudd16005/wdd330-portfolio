@@ -5,7 +5,68 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ToDo List</title>
         <script type="module" src="js/ToDo.js"></script>
-        <link rel="stylesheet" href="Todo_List.css">
+        <style>
+            h1 {
+                text-align: center;
+            }
+
+            .container{
+                max-width: 400px;
+                margin: auto;
+                font-size: 14px;
+                font-family: sans-serif;
+            }
+
+            .todo {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                border: 1px solid black;
+                padding: 10px;
+                box-sizing: border-box;
+                margin: 10px 0px;
+            }
+
+            .todo button {
+                width: 25px;
+                height: 25px;
+                border: 1px solid grey;
+                border-radius: 2px;
+            }
+
+            .todo-delete-btn {
+                background-color: navy;
+                color: white;
+            }
+
+            .todo-content {
+                padding: 10px 20px;
+                width: calc(100% - 50%);
+            }
+
+            .todo-filters {
+                padding-top: 20px;
+            }
+
+            .completed {
+                text-decoration: line-through;
+            }
+            
+            .add-todo-wrapper {
+                width: 100%;
+                display: flex;
+            }
+
+            #todoInput {
+                flex: 1;
+                padding: 5px;
+            }
+
+            #addbtn {
+                padding: 10px 25px;
+                margin-left: 20px;
+            }
+        </style>
     </head>
     <body>
         <div class="container">
@@ -17,12 +78,14 @@
                 </div>
 
                 <div class="todo-filters">
-
+                    <button id="allFilter">All</button>
+                    <button id="activeFilter">Active</button>
+                    <button id="completedFilter">Completed</button>
                 </div>
             </div>
 
             <div class="add-todo-wrapper">
-                <input id="todInput" type="text">
+                <input id="todoInput" type="text">
                 <button id="addBtn">Add</button>
             </div>
 
