@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+<head>
+    <title>Week 09: Code</title>
+    <script>
+    </script>
+
+    <style>
+    </style>
+</head>
+
+<body>
+    <h1>Chapter 09</h1>
+    <h3>Going Global</h3>
+    <div>
+        x = 6;  // global variable created <br>
+        << 6 <br>
+        window.x // same variable can be accessed as a property of the window object <br>
+        << 6 <br>
+        // both variables are exactly the same <br>
+        window.x === x; <br>
+        << true <br>
+        if (x) { 
+            // do something
+        }
+        if (window.x) {
+        // do something
+        }
+        window.parseInt(4.2);
+        << 4
+        window.isNaN(4.2);
+        << false
+    </div>
+    <h3>Dialogs</h3>
+    <div>
+        window.alert('Hello'); <br>
+        << undefined <br>
+    </div>
+    <h3>Which Browser?</h3>
+    <div>
+        window.navigator.userAgent <br>
+        << "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/602.4.8 (KHTML, like Gecko) Version/10.0.3 Safari/602.4.8" <br>
+    </div>
+    <h3>Location, Location, Location</h3>
+    <div>
+        window.navigator.userAgent <br>
+        << "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/602.4.8 (KHTML, like Gecko) Version/10.0.3 Safari/602.4.8" <br>
+        window.location.href = 'https://www.sitepoint.com/javascript/' <br>
+        << "https://www.sitepoint.com/javascript/" <br>
+        window.location.protocol <br>
+        << "https:" <br>
+        window.location.host <br>
+        << "www.sitepoint.com" <br>
+        window.location.hostname <br>
+        << "www.sitepoint.com" <br>
+        window.location.port <br>
+        << "" <br>
+        window.location.pathname <br>
+        << "/premium/books/javascript-novice-to-ninja" <br>
+        window.location.search <br>
+        << "?q=javascript&limit=24&offset=0&page=1& <br>
+        content_types[]=All&slugs[]=all&states[]=available&order=" <br>
+        window.location.hash <br>
+        << "" <br>
+        window.location.origin <br>
+        << "https://www.sitepoint.com" <br>
+        window.location.assign('https://www.sitepoint.com/') <br>
+        window.location.toString(); <br>
+        << "https://www.sitepoint.com/javascript/" <br>
+    </div>
+    <h3>The Browser History</h3>
+    <div>
+        window.history.go(1); // goes forward 1 page <br>
+        window.history.go(0); // reloads the current page <br>
+        window.history.go(-1); // goes back 1 page <br>
+    </div>
+    <h3>Contorlling Windows</h3>
+    <div>
+        const popup = window.open('https://sitepoint.com',' <br>
+        SitePoint','width=400,height=400,resizable=yes'); <br>
+        popup.close(); //The close() method can be used to close a window, assuming you have a reference to it <br>
+        window.moveTo(0,0); // will move the window to the top-left corner of the screen <br>
+        window.resizeTo(600,400); <br>
+    </div>
+    <h3>Screen Information</h3>
+    <div>
+        window.screen.height <br>
+        << 1024 <br>
+        window.screen.width //The window.screen object contains information about the screen the browser is displayed on. You can find out the height and width of the screen in pixels using the height and width properties respectively.<br>
+        << 1280 <br>
+        window.screen.availWidth <br>
+        << 1280 <br>
+        window.screen.availHeight //The availHeight and availWidth can be used to find the height and width of the screen, excluding any operating system menus. <br>
+        << 995 <br>
+        window.screen.colorDepth; //The colorDepth property can be used to find the color bit depth of the user’s monitor, although there are few use cases for doing this other than collecting user statistics.<br>
+        << 24 <br>
+    </div>
+    <h3>The Document Object</h3>
+    <div>
+        document.write('Hello, world!'); <br>
+        document.write('<h1>Hello, world!</h1>'); <br>
+    </div>
+    <h3>Creating Cookies</h3>
+    <div>
+        document.cookie = 'name=Superman'; <br>
+        << "name=Superman" <br>
+        document.cookie = 'hero=true'; <br>
+        << "hero=true" <br>
+        document.cookie = 'city=Metropolis'; <br>
+        << "city=Metropolis" <br>
+    </div>
+    <h3>Changing Cookie Value</h3>
+    <div>
+        document.cookie = 'name=Batman' <br>
+        << "name=Batman" <br>
+        document.cookie = 'city=Gotham' <br>
+        << "city=Gotham" <br>
+    </div>
+    <h3>Reading Cookies</h3>
+    <div>
+        document.cookie: <br>
+        << "name=Batman; hero=true; city=Gotham" <br>
+        const cookies = document.cookie.split("; "); <br>
+        for (crumb of cookies){ <br>
+            const [key,value] = crumb.split("="); <br>
+            console.log(`The value of ${key} is ${value}`); <br>
+        } <br>
+        << The value of name is Batman <br>
+        The value of hero is true <br>
+        The value of city is Gotham <br>
+    </div>
+    <h3>Cookie Expiry Dates</h3>
+    <div>
+        const expiryDate = new Date(); <br>
+        const tomorrow = expiryDate.getTime() + 1000 * 60 * 60 * 24; <br>
+        expiryDate.setTime(tomorrow); <br>
+        document.cookie = `name=Batman; expires=${ expiryDate.toUTCString()}`; <br>
+        document.cookie = 'name=Batman; max-age=86400' // 86400 secs = 1 day <br>
+        document.cookie = 'name=Batman; secure'; // Secure Cookies <br>
+        document.cookie = 'name=Batman; expires=Thu, 01 Jan 1970 00:00:01 GMT'; // Deleting Cookies <br>
+    </div>
+    <h3>Timing Functions</h3>
+    <div>
+        window.setTimeout( () => alert("Time's Up!"), 3000); <br>
+        << 4 <br>
+        window.clearTimeout(5); <br>
+        << undefined <br>
+        function chant(){ console.log('Beetlejuice'); } <br>
+        const summon = window.setInterval(chant,1000); <br>
+        << 6 <br>
+        window.clearInterval(summon); <br>
+    </div>
+    <h1>Chapter 14</h1>
+    <h3>The data- Attribute</h3>
+    <div>
+        //The data- attribute is a way of embedding data in a web page using custom attributes that are ignored by the browser. <br>
+        They’re also private to a page, so are not intended to be used by an external service – their sole purpose is to be used by a JavaScript program. <br>
+        data-powers = 'flight superSpeed' <br>
+        data-rating = '5' <br>
+        data-dropdown <br>
+        data-user = 'DAZ' <br>
+        data-max-length = '32' <br>
+    </div>
+    <h3>HTML5 Web Storage</h3>
+    <div>
+        localStorage.setItem('name', 'Walter White'); // Here is a basic example of storing information. To save a value locally, use this <br>
+        console.log(localStorage.name); <br>
+        << "Heisenberg"; <br>
+        localStorage.removeItem('name'); //To remove an entry from local storage <br>
+        delete localStorage.name; //Alternatively, this can be done using this <br>
+        localStorage.clear(); // To completely remove everything stored in local storage <br>
+        key tells us the key of the item that changed <br>
+        newValue tells us the new value to which it has been changed <br>
+        oldValue tells us the previous value before it was changed <br>
+        storageArea tells us if it is stored in local or session storage. <br>
+    </div>
+    <h3>Geolocation</h3>
+    <div>
+        navigator.geolocation.getCurrentPosition(youAreHere); // The Geolocation API is used to obtain the geographical position of the device. 
+    </div>
+</body>
+</html>
