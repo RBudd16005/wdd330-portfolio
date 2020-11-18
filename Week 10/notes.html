@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Week 09: Notes</title>
+    </head>
+    <body>
+        <h1>Notes</h1>
+        <div>
+            Client-side form validation helps ensure data submitted matches the requirements set forth in the various form controls. <br>
+            Reasons for form validation: <br>
+            1. To get the right data. <br>
+            2. To protet our users' data. <br>
+            3. To proetct ourselves. <br>
+            Validation Attributes: <br>
+            required: Specifies whether a form field needs to be filled in before the form can be submitted. <br>
+            minlength and maxlength: Specifies the minimum and maximum length of textual data (strings) <br>
+            in and max: Specifies the minimum and maximum values of numerical input types <br>
+            type: Specifies whether the data needs to be a number, an email address, or some other specific preset type.  <br>
+            pattern: Specifies a regular expression that defines a pattern the entered data needs to follow. <br>
+            When an element is valid, the following things are true: <br>
+            The element matches the :valid CSS pseudo-class, which lets you apply a specific style to valid elements. <br>
+            If the user tries to send the data, the browser will submit the form, provided there is nothing else stopping it from doing so (e.g., JavaScript). <br>
+            When an element is invalid, the following things are true: <br>
+            The element matches the :invalid CSS pseudo-class, and sometimes other UI pseudo-classes (e.g., :out-of-range) depending on the error, which lets you apply a specific style to invalid elements. <br>
+            If the user tries to send the data, the browser will block the form and display an error message. <br>
+            Another useful validation feature is the pattern attribute, which expects a Regular Expression as its value. <br>
+            Exampltes of how this works: <br>
+            a — Matches one character that is a (not b, not aa, and so on). <br>
+            abc — Matches a, followed by b, followed by c. <br>
+            ab?c—Matches a, optionally followed by a single b, followed by c. ( ac or abc) <br>
+            ab*c—Matches a, optionally followed by any number of bs, followed by c. ( ac , abc, abbbbbc, and so on). <br>
+            a|b — Matches one character that is a or b. <br>
+            abc|xyz — Matches exactly abc or exactly xyz (but not abcxyz or a or y, and so on). <br>
+            Most browsers support the Constraint Validation API, which consists of a set of methods and properties available on the following form element DOM interfaces: <br>
+            HTMLButtonElement (represents a <button> element) <br>
+            HTMLFieldSetElement (represents a <fieldset> element) <br>
+            HTMLInputElement (represents an <input> element) <br>
+            HTMLOutputElement (represents an <output> element) <br>
+            HTMLSelectElement (represents a <select> element) <br>
+            HTMLTextAreaElement (represents a <textarea> element) <br>
+            The Constraint validation API makes the following properties available on the above elements. <br>
+            validationMessage: Returns a localized message describing the validation constraints that the control doesn't satisfy (if any). If the control is not a candidate for constraint validation (willValidate is false) or the element's value satisfies its constraints (is valid), this will return an empty string. <br>
+            validity: Returns a ValidityState object that contains several properties describing the validity state of the element. You can find full details of all the available properties in the ValidityState reference page; below is listed a few of the more common ones: <br>
+            patternMismatch: Returns true if the value does not match the specified pattern, and false if it does match. If true, the element matches the :invalid CSS pseudo-class. <br>
+            tooLong: Returns true if the value is longer than the maximum length specified by the maxlength attribute, or false if it is shorter than or equal to the maximum. If true, the element matches the :invalid CSS pseudo-class. <br>
+            tooShort: Returns true if the value is shorter than the minimum length specified by the minlength attribute, or false if it is greater than or equal to the minimum. If true, the element matches the :invalid CSS pseudo-class. <br>
+            rangeOverflow: Returns true if the value is greater than the maximum specified by the max attribute, or false if it is less than or equal to the maximum. If true, the element matches the :invalid and :out-of-range CSS pseudo-classes. <br>
+            rangeUnderflow: Returns true if the value is less than the minimum specified by the min attribute, or false if it is greater than or equal to the minimum. If true, the element matches the :invalid and :out-of-range CSS pseudo-classes. <br>
+            typeMismatch: Returns true if the value is not in the required syntax (when type is email or url), or false if the syntax is correct. If true, the element matches the :invalid CSS pseudo-class. <br>
+            valid: Returns true if the element meets all its validation constraints, and is therefore considered to be valid, or false if it fails any constraint. If true, the element matches the :valid CSS pseudo-class; the :invalid CSS pseudo-class otherwise. <br>
+            valueMissing: Returns true if the element has a required attribute, but no value, or false otherwise. If true, the element matches the :invalid CSS pseudo-class. <br>
+            willValidate: Returns true if the element will be validated when the form is submitted; false otherwise. <br>
+            Response instances are returned when fetch() promises are resolved. <br>
+            The most common response properties you'll use are: <br>
+            Response.status — An integer (default value 200) containing the response status code. <br>
+            Response.statusText — A string (default value "OK"), which corresponds to the HTTP status code message. <br>
+            Response.ok — seen in use above, this is a shorthand for checking that status is in the range 200-299 inclusive. This returns a Boolean. <br>
+        </div>
+    </body>
+</html>
