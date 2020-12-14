@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PokeParty</title>
+        <link rel="stylesheet" type="text/css" href="pokestyles.css" />
+        <script type="module" src="js/pkapi_async.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="border-wrapper">
+            <div class="container-fluid">
+                <input id="search_input" type="text" placeholder="Search... (Ex. ditto)"><span class="button" id="search_button">Search</span><span class="button" id="add_button">Add to Party</span>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="title-div" id="title_sprite">Sprite</div>
+                        <img id="main_image">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="title-div">Name</div><div id="name_div"></div>
+                        <div class="title-div" id="title_type">Type</div><div id="type_div"></div>
+                        <div class="title-div" id="title_ability">Abilities</div><div id="ability_div"></div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="title-div" id="title_type">Stats</div>
+                        <div class="stats-wrapper">
+                            <div class="bold">Health</div><div id="hp_div"></div>
+                            <div class="bold">Attack</div><div id="atk_div"></div>
+                            <div class="bold">Defense</div><div id="def_div"></div>
+                            <div class="bold">Special Attack</div><div id="spatk_div"></div>
+                            <div class="bold">Special Defense</div><div id="spdef_div"></div>
+                            <div class="bold">Speed</div><div id="spd_div"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="title-div" id="title_moves">Moves</div>
+                <div class="ext">
+                    <table id="move_list">
+                        <thead>
+                            <tr>
+                                <th>Level |&nbsp;</th>
+                                <th>Name</th>
+                            </tr>
+                        </thead>
+
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+                <div class="title-div" id="title_party">Party</div>
+                <div class="ext">
+                    <div id="party"></div>
+                </div>
+            </div>   
+        </div>
+    </body>
+</html>
